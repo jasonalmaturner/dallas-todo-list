@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To Do</title>
+</head>
+<body ng-app="todo" ng-controller="mainCtrl">
+  This is what I need to doo
+  <form ng-submit="addItem()">
+    <input type="text" placeholder="title" ng-model="newItem.title">
+    <input type="text" placeholder="description" ng-model="newItem.description">
+    <button>Submit</button>
+  </form>
+  <br>
+  <hr>
+  <ul class="list">
+    <li ng-repeat="item in items">{{item.title}}: {{item.description}}</li>
+  </ul>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="app.js"></script>
+  <script src="controller.js"></script>
+  <script src="service.js"></script>
+</body>
+</html>
