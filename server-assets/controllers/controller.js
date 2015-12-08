@@ -35,7 +35,7 @@ module.exports = {
           flag = true;
           break;
       };
-      if (flag) return res.status(208).send('cannot advance anymore');
+      if (flag) return res.status(208).send('item already archived');
       return item.save().then(function(savedItem) {
         return res.send('item advanced');
       });

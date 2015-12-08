@@ -30,6 +30,14 @@ angular.module('todo').controller('mainCtrl', function($scope, service) {
 
   $scope.advanceItem = function(id) {
     service.advanceItem(id).then(function(res) {
+      if (res === 'item already archived') {
+        swal({
+          title: 'Danger!',
+          text: res,
+          timer: 3000,
+          type: 'error',
+        });
+      };
       $scope.getItems();
     });
   };

@@ -21,6 +21,8 @@ angular.module('todo').service('service', function($http) {
     return $http({
       method: 'PUT',
       url: 'api/advance/' + id,
+    }).then(function(res) {
+      return res.data;
     });
   };
 });
