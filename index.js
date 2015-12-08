@@ -13,6 +13,7 @@ app.use(cors(), bodyParser.json(), express.static(__dirname + '/public'));
 
 app.get('/api/items', controller.getItems);
 app.post('/api/items', controller.addItem);
+app.put('/api/advance/:id', controller.advanceItem);
 
 app.listen(port, function() {
   console.log('listening on port:', port);

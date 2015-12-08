@@ -1,8 +1,9 @@
 angular.module('todo').service('service', function($http) {
-  this.getItems = function() {
+  this.getItems = function(query) {
+    query = query ? '?status=' + query : '';
     return $http({
       method: 'GET',
-      url: 'api/items',
+      url: 'api/items' + query,
     }).then(function(res) {
       return res.data;
     });
@@ -13,6 +14,13 @@ angular.module('todo').service('service', function($http) {
       method: 'POST',
       url: 'api/items',
       data: item,
+    });
+  };
+
+  this.advanceItem = function(id) {
+    return $http({
+      method: 'PUT',
+      url: 'api/advance/' + id,
     });
   };
 });
