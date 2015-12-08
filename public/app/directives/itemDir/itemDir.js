@@ -7,6 +7,7 @@ angular.module('todo').directive('itemDir', function($timeout) {
     templateUrl: 'app/directives/itemDir/itemDirTmpl.html',
     link: function(scope, elem, attr) {
       var timeout;
+      console.log(scope.theItem.image);
       scope.advance = function() {
         if (scope.checked) {
           elem.css('text-decoration', 'line-through');
